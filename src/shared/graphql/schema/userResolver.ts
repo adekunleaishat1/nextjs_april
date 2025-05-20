@@ -1,7 +1,7 @@
 import { usermodel } from "@/shared/database/model/user.model";
 import jwt from "jsonwebtoken";
-
 import { User } from "@/types/user.types";
+import { handleError } from "@/shared/utils/handlError";
 
 const userResolvers = {
   Query:{
@@ -9,24 +9,27 @@ const userResolvers = {
       try {
         const users =  await usermodel.find()
        return users;
-      } catch (error:any) {
-        throw new Error(error.message)
+      } catch (error) {
+        handleError(error)
       }
     },
   },
   Mutation:{
-    createuser: async(_:any,{name, email, password}:User)=>{
+    createuser: async(_:unknown,{name, email, password}:User)=>{
         try {
           const user =  await usermodel.create({name, email, password})
           if (user) {
             return user
           }
-        } catch (error:any) {
-            throw new Error(error.message)
+        } catch (error) {
+          // if (error instanceof Error) {
+          //   throw new Error(error.message)
+          // }
+          handleError(error)
         }
     },
 
-    loginuser:async(_:any, {email, password}:{email:string, password:string})=>{
+    loginuser:async(_:unknown, {email, password}:{email:string, password:string})=>{
         try {
              if (!email || !password) {
               throw new Error("input field cannot be empty")
@@ -37,7 +40,7 @@ const userResolvers = {
              if (!user || password !== user.password){
               throw new Error("User not found");
              }
-              const token =  await jwt.sign({email}, process.env.SECRETKEY, {expiresIn:"1d"})
+              const token =  await jwt.sign({email}, process.env.SECRETKEY!, {expiresIn:"1d"})
               console.log(token,"usertoken");
               if (token) {
                 const data = {
@@ -51,8 +54,8 @@ const userResolvers = {
                 return  data
               }
             
-        } catch (error:any) {
-          throw new Error(error.message);
+        } catch (error) {
+          handleError(error)
         }
     },
   }

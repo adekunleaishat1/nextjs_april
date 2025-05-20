@@ -3,10 +3,12 @@ import blogmodel from "@/shared/database/model/blog.model";
 import cloudinary from "@/shared/lib/cloudinary";
 import slugify from "slugify";
 import { BlogInput } from "@/types/blog.types";
+import { handleError } from "@/shared/utils/handlError";
+import {ContextType} from "@/types/context.types";
 
 const blogResolvers = {
   Query:{
-    getallblog:async(_:any, {limit, offset}:{limit:number, offset:number}) =>{
+    getallblog:async(_:unknown, {limit, offset}:{limit:number, offset:number}) =>{
       try {
         const blogs = await blogmodel.find()
           .skip(offset)
@@ -14,14 +16,14 @@ const blogResolvers = {
           .sort({ createdAt: -1 }); // Optional: Sort by latest
     
         return blogs;
-      } catch (error:any) {
-        throw new Error(error);
+      } catch (error) {
+        handleError(error)
       }
     }
   },
 
   Mutation:{
-    createBlogPost:async(_:any, args:{input:BlogInput} , context:any ) => {
+    createBlogPost:async(_:unknown, args:{input:BlogInput} , context:ContextType ) => {
        try {
         const { input } = args;
         const { user } = context;
@@ -56,8 +58,8 @@ const blogResolvers = {
 
               return newblog
           }
-       } catch (error:any) {
-        throw new Error(error.message);
+       } catch (error) {
+        handleError(error)
        }
     },
   }

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Sen } from "next/font/google";
 import "./globals.css";
 import ApolloProvider from "@/shared/provider/ApolloProvider";
+import { Toaster } from "sonner";
 
 const sen = Sen({
   subsets: ["latin"],
-  weight: ["400", "700", "800"],
+  weight: ["400", "500", "700", "800"],
   variable: "--font-sen",
 });
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sen.variable} antialiased`}>
-        <ApolloProvider>{children}</ApolloProvider>
+        <ApolloProvider>
+          {children}
+          <Toaster />
+        </ApolloProvider>
       </body>
     </html>
   );

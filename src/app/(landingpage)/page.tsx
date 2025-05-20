@@ -1,22 +1,29 @@
-"use client"
-import Cookie from 'js-cookie'
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import Cookie from "js-cookie";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Homepage from ".";
 
 export default function Home() {
-  const router = useRouter()
- const token =  Cookie.get("token")
+  const router = useRouter();
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
-     if (!token) {
-      router.replace("/login")
-     }
-  }, [])
-  
+    const token = Cookie.get("token");
+    if (!token) {
+      router.replace("/login");
+    } else {
+      setloading(false);
+    }
+  }, [router]);
+
+  if (loading) {
+    return <p>Checking authentication...</p>;
+  }
 
   return (
     <div>
-       <h1>Welcome to your landingpage</h1>
+      <Homepage />
     </div>
   );
 }
