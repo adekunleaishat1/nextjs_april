@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import featured from "../../../../public/images/white-concrete-building-1838640.png";
 import Link from "next/link";
-import { RiArrowDropRightLine } from "react-icons/ri";
 
 const BlogPosts = () => {
   return (
@@ -31,9 +30,8 @@ const BlogPosts = () => {
               Read More
               <RiArrowDropRightLine />
             </button> */}
-            <button className="bg-[#FFD050] px-6 h-[40px] flex items-center justify-center gap-1">
-              <span>Read More</span>
-              <RiArrowDropRightLine className="text-[30px]" />
+            <button className="bg-[#FFD050] mt-[15px] text-black text-[16px] leading-[24px] font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition">
+              Read More &gt;
             </button>
           </div>
         </div>

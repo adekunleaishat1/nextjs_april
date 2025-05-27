@@ -22,9 +22,6 @@ const userResolvers = {
             return user
           }
         } catch (error) {
-          // if (error instanceof Error) {
-          //   throw new Error(error.message)
-          // }
           handleError(error)
         }
     },

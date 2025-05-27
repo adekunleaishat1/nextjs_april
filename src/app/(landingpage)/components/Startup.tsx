@@ -18,7 +18,9 @@ const Startup = () => {
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident.
           </p>
-          <button className="bg-[#FFD050] px-6 py-2 ">Read More </button>
+          <button className="bg-[#FFD050] mt-[15px] text-black text-[16px] leading-[24px] font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition">
+            Read More &gt;
+          </button>
         </div>
       </div>
     </div>

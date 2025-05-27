@@ -51,15 +51,12 @@ const AboutSection = () => {
   return (
     <div className="w-full py-10">
       <section className="max-w-[1200px] bg-[#F4F0F8] relative px-4 md:px-10 py-12 mx-auto">
-        {/* Top Color Bar */}
         <div className="absolute top-[-10] justify-end right-0 w-full h-[10px] flex">
           <div className="bg-[#FFD050] w-[800px]" />
           <div className="bg-[#592EA9] w-[200px]" />
         </div>
 
-        {/* Content Container */}
         <div className="max-w-7xl mx-auto grid md:grid-cols-2  gap-8 z-10">
-          {/* About Us */}
           <div>
             <h4 className="uppercase text-sm tracking-widest text-gray-600 font-semibold mb-3">
               About Us
@@ -73,13 +70,12 @@ const AboutSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <button className="text-[#592EA9] font-semibold flex items-center space-x-1">
-              <span>Read More</span>
-              <RiArrowRightLine className="text-lg" />
+
+            <button className="text-[#592EA9] mt-[15px] text-[16px] leading-[24px] font-semibold ">
+              Read More &gt;
             </button>
           </div>
 
-          {/* Our Mission */}
           <div>
             <h4 className="uppercase text-sm tracking-widest text-gray-600 font-semibold mb-3">
               Our Mission
