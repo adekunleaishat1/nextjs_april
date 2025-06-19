@@ -4,11 +4,7 @@ import author1 from "../../../../public/images/man-in-yellow-button-up-shirt-wea
 import author2 from "../../../../public/images/woman-in-white-and-black-striped-shirt-wearing-black-sunglasses-3671083.png";
 import author3 from "../../../../public/images/fashion-woman-cute-shoes-5704849.png";
 import author4 from "../../../../public/images/content-baker-with-delicious-puff-in-cafeteria-6205509.png";
-import logo1 from "../../../../public/logos/Logo 1.png";
-import logo2 from "../../../../public/logos/Logo 2.png";
-import logo3 from "../../../../public/logos/Logo 3.png";
-import logo4 from "../../../../public/logos/Logo 4.png";
-import logo5 from "../../../../public/logos/Logo 5.png";
+
 const authors = [
   {
     name: "Floyd Miles",
@@ -36,16 +32,14 @@ const authors = [
   },
 ];
 
-const logos = [logo1, logo2, logo3, logo4, logo5];
-
 const AuthorSection = () => {
   return (
-    <section className="py-16 px-4 md:px-12 text-center">
+    <section className="py-12 px-4 md:px-12 text-center ">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
         List of Authors
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {authors.map((author, index) => (
           <div
             key={index}
@@ -71,29 +65,6 @@ const AuthorSection = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="flex flex-wrap justify-between ">
-        <div className="text-left   text-gray-600 font-medium ">
-          <span className="text-sm uppercase">We are</span>
-          <div className="text-lg font-bold">Featured in</div>
-        </div>
-
-        <div className="flex flex-wrap justify-between items-center w-[1000px] ">
-          {logos.map((logo, idx) => (
-            <div
-              key={idx}
-              className="w-24 h-6 relative grayscale opacity-80 hover:opacity-100"
-            >
-              <Image
-                src={logo}
-                alt={`logo-${idx}`}
-                fill
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

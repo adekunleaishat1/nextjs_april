@@ -19,7 +19,7 @@ const Navbar = () => {
             <Link href="/blog" className="text-[#FFFFFF] text-[16px] ">
               Blog
             </Link>
-            <Link href="" className="text-[#FFFFFF] text-[16px] ">
+            <Link href="/about" className="text-[#FFFFFF] text-[16px] ">
               About Us
             </Link>
             <Link href="" className="text-[#FFFFFF] text-[16px] ">
@@ -30,7 +30,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="block md:hidden ">
+          <div className="block md:hidden">
             <CiMenuFries className="text-[#fff] text-[20px]" />
           </div>
         </div>

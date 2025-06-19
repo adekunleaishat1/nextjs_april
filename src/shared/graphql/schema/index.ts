@@ -4,7 +4,6 @@ import userResolvers from "./userResolver";
 import blogResolvers from "./blogResolver";
 import userTypeDefs from "./userTypedef";
 import blogTypeDefs from "./blogTypedefs";
-
 export const resolvers = mergeResolvers(
     [
         userResolvers,
@@ -12,7 +11,6 @@ export const resolvers = mergeResolvers(
 
     ]
 )
-
 export const typeDefs =  mergeTypeDefs(
     [
         userTypeDefs,

@@ -27,10 +27,14 @@ input CreateBlogPostInput {
 
   type Query {
    getallblog(limit: Int!, offset: Int!):[BlogPost!]!
+   getoneblog(slug:String!):BlogPost!
+   searchBycategory(category:String!,limit: Int!, offset: Int! ):[BlogPost!]!
   }
     
   type Mutation {
      createBlogPost(input: CreateBlogPostInput!):BlogPost!
+     editBlogPost(input: CreateBlogPostInput!,id:ID!):BlogPost!
+     deleteBlogPost(slug:String!):BlogPost!
   }
       
 

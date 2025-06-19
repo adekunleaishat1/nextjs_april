@@ -1,8 +1,8 @@
 // import { FaBuilding, FaRocket, FaChartBar, FaRobot } from "react-icons/fa";
-import economyimg from "../../../../public/images/economy (1).png";
-import technologyimg from "../../../../public/images/cyborg.png";
-import startupimg from "../../../../public/images/Icon (1).png";
-import businessimg from "../../../../public/images/Icon (2).png";
+import economyimg from "../../../public/images/economy (1).png";
+import technologyimg from "../../../public/images/cyborg.png";
+import startupimg from "../../../public/images/Icon (1).png";
+import businessimg from "../../../public/images/Icon (2).png";
 import Image from "next/image";
 
 const categories = [

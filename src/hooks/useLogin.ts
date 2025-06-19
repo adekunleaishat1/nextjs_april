@@ -41,7 +41,6 @@ export const useLogin = () =>{
       } catch (error) {
         const errorMessage = (error as ApolloError).message
         toast.error(errorMessage,{
-            description: "Please check your email or password.",
             duration: 5000
         })
       }

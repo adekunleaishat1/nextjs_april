@@ -22,6 +22,8 @@ const handler = startServerAndCreateNextHandler<NextRequest>(server,{
         return {}
        }
       const user = await jwt.verify(token, process.env.SECRETKEY!);
+      console.log(user);
+      
       return {user}
      } catch (error) {
       console.log(error)

@@ -1,7 +1,11 @@
+import Aboutroot from ".";
+
 const About = () => {
-    return ( 
-        <h1>Welcome to about us</h1>
-     );
-}
- 
+  return (
+    <h1>
+      <Aboutroot />
+    </h1>
+  );
+};
+
 export default About;

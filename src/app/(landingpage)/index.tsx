@@ -2,11 +2,11 @@
 import AboutSection from "./components/AboutUs";
 import AuthorSection from "./components/AuthorSection";
 import BlogPosts from "./components/Blogposts";
-import CategorySection from "./components/CategorySection";
+import CategorySection from "../../components/categorysection";
 import Startup from "./components/Startup";
-import TeamStory from "./components/TeamStory";
 import TestimonialsSection from "./components/TestimonialsSection";
 import WhyWeStartedSection from "./components/Whygetstarted";
+import Featuredin from "./components/Featuredin";
 
 const Homepage = () => {
   return (
@@ -17,8 +17,8 @@ const Homepage = () => {
       <CategorySection />
       <WhyWeStartedSection />
       <AuthorSection />
+      <Featuredin />
       <TestimonialsSection />
-      <TeamStory />
     </>
   );
 };
