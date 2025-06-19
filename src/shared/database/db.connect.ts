@@ -5,7 +5,7 @@ console.log(MONGO_URI,"HELLO Y IS THIS NOT WORKING");
 
 export const connect = async() =>{
  try {
-  if (MONGO_URI) {
+  if (!MONGO_URI) {
     throw new Error("Missing MONGODB_URI environment variable");
   }
    const connection =  await mongoose.connect(MONGO_URI)
