@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const MONGO_URI = process.env.MONGODB!
+console.log(MONGO_URI,"HELLO Y IS THIS NOT WORKING");
 
 export const connect = async() =>{
  try {
